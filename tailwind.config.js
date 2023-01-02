@@ -12,6 +12,7 @@ module.exports = {
         'josefin':['Josefin Sans', 'sans-serif'],
         'lora':['Lora', 'serif'],
         'Baloo':['Baloo Bhai 2', 'cursive'],
+        'Archivo':['Archivo Black', 'sans-serif'],
       }
     },
   },
