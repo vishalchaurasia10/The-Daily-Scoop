@@ -1,12 +1,12 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faTwitter,faFacebookSquare,faLinkedin,faInstagram} from '@fortawesome/free-brands-svg-icons'
-import {faSearch,faUser} from '@fortawesome/free-solid-svg-icons'
+import {faPenToSquare, faSearch,faUser} from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
   return (
     <div>
-      <nav className='backdrop-blur-md text-gray-300 w-full bg-opacity-25 rounded-md shadow-xl py-3 flex fixed top-0 z-50 m-1 p-1 items-center'>
+      <nav className='backdrop-blur-md bg-[rgba(255,255,255,0.1)] text-gray-300 w-full bg-opacity-25 rounded-md shadow-xl py-3 flex fixed top-0 z-50 m-1 p-1 items-center'>
         <div className="topLeft flex space-x-6 ml-24 w-1/4">
         <FontAwesomeIcon className='w-6 h-6 hover:text-white' icon={faTwitter} />
         <FontAwesomeIcon className='w-6 h-6 hover:text-white' icon={faLinkedin} />
@@ -22,8 +22,9 @@ const Navbar = () => {
                 <li className='hover:text-white'>Contact Us</li>
             </ul>
         </div>
-        <div className="topRight w-1/4 flex justify-end mr-24 space-x-6">
+        <div className="topRight w-1/4 flex justify-end items-center mr-24 space-x-6">
           <FontAwesomeIcon className=' w-6 h-6 hover:text-white' icon={faSearch} />
+          <FontAwesomeIcon className='w-6 h-6 hover:text-white' icon={faPenToSquare}/>
           <FontAwesomeIcon className='loginImage border border-white rounded-full p-1 w-6 h-6 hover:text-white' icon={faUser} />
         </div>
       </nav>
