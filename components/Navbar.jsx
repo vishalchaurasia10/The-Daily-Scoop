@@ -1,7 +1,7 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faTwitter,faFacebookSquare,faLinkedin,faInstagram} from '@fortawesome/free-brands-svg-icons'
-import {faPenToSquare, faSearch,faUser} from '@fortawesome/free-solid-svg-icons'
+import {faPenToSquare, faSearch, faUserCircle} from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
   return (
@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className="topRight w-1/4 flex justify-end items-center mr-24 space-x-6">
           <FontAwesomeIcon className=' w-6 h-6 hover:text-white' icon={faSearch} />
           <FontAwesomeIcon className='w-6 h-6 hover:text-white' icon={faPenToSquare}/>
-          <FontAwesomeIcon className='loginImage border border-white rounded-full p-1 w-6 h-6 hover:text-white' icon={faUser} />
+          <FontAwesomeIcon className='loginImage w-6 h-6 hover:text-white' icon={faUserCircle} />
         </div>
       </nav>
     </div>
