@@ -13,6 +13,7 @@ module.exports = {
         'lora':['Lora', 'serif'],
         'Baloo':['Baloo Bhai 2', 'cursive'],
         'Archivo':['Archivo Black', 'sans-serif'],
+        'Poppins':['Poppins', 'sans-serif'],
       }
     },
   },

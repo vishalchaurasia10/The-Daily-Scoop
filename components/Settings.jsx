@@ -3,10 +3,9 @@ import Image from 'next/image'
 
 const Settings = () => {
     return (
-        <div className="pt-20 pb-1 px-32 flex flex-col justify-center items-center bg-[url('/coolbg2.png')]">
+        <div className="pt-20 pb-1 px-32 flex flex-col h-screen justify-center items-center bg-[url('/coolbg2.png')]">
             <div className="updation flex justify-between">
                 <h1 className='text-3xl text-white font-nunito'>Update Account</h1>
-                {/* <h3 className='text-xl text-white hover:text-red-600 font-nunito'>Delete Account</h3> */}
             </div>
             <div className="profile">
                 <form action="profilesetting">
