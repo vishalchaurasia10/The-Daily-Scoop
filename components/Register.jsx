@@ -26,7 +26,7 @@ const Register = () => {
                             </div>
                         </div>
                         <button className='py-2 mt-8 w-full hover:-translate-y-[0.1rem] text-black  bg-red-50 duration-150 font-nunito font-semibold border rounded-md px-3 backdrop-blur-lg shadow-lg  border-[rgba(255,255,255,0.1)]'>Register</button>
-                        <button className='py-2 mt-3 w-full hover:-translate-y-[0.1rem] text-black  bg-red-50 duration-150 font-nunito font-semibold border rounded-md px-3 backdrop-blur-lg shadow-lg  border-[rgba(255,255,255,0.1)]'>Login</button>
+                        <Link href='/login'><button className='py-2 mt-3 w-full hover:-translate-y-[0.1rem] text-black  bg-red-50 duration-150 font-nunito font-semibold border rounded-md px-3 backdrop-blur-lg shadow-lg  border-[rgba(255,255,255,0.1)]'>Login</button></Link>
                     </form>
                 </div>
             </div>

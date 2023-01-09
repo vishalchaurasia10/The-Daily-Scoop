@@ -29,7 +29,7 @@ const Login = () => {
                         <Link className='hover:text-white' href='/'>Forgot Password?</Link>
                     </div>
                     <button className='py-2 mt-8 w-full hover:-translate-y-[0.1rem] text-black  bg-red-50 duration-150 font-nunito font-semibold border rounded-md px-3 backdrop-blur-lg shadow-lg  border-[rgba(255,255,255,0.1)]'>Login</button>
-                    <button className='py-2 mt-3 w-full hover:-translate-y-[0.1rem] text-black  bg-red-50 duration-150 font-nunito font-semibold border rounded-md px-3 backdrop-blur-lg shadow-lg  border-[rgba(255,255,255,0.1)]'>Register</button>
+                    <Link href='/register'><button className='py-2 mt-3 w-full hover:-translate-y-[0.1rem] text-black  bg-red-50 duration-150 font-nunito font-semibold border rounded-md px-3 backdrop-blur-lg shadow-lg  border-[rgba(255,255,255,0.1)]'>Register</button></Link>
                 </form>
             </div>
         </div>
