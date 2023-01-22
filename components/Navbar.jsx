@@ -5,7 +5,7 @@ import {faPenToSquare, faSearch, faUserCircle} from '@fortawesome/free-solid-svg
 import Link from 'next/link'
 
 const Navbar = () => {
-  const user = true
+  const user = false
   return (
     <div>
       <nav className='backdrop-blur-md bg-[rgba(255,255,255,0.1)] text-gray-300 w-full bg-opacity-25 rounded-md shadow-xl py-3 flex fixed top-0 z-50 m-1 p-1 items-center'>
