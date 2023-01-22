@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faLock, faUserCircle } from '@fortawesome/free-solid-svg-icons'
@@ -6,6 +6,17 @@ import Image from 'next/image'
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
 const Login = () => {
+    const [remember, setRemember] = useState(0);
+    const changeRemember = () =>{
+        if(remember === 0)
+        {
+            setRemember(1)
+        }else
+        {
+            setRemember(0)
+        }
+    }
+
     return (
         <>
             <div className="mainBlock bg-cover bg-center bg-no-repeat bg-[url('/wave-haikei.svg')] flex flex-col lg:flex-row justify-center items-center">
@@ -13,7 +24,7 @@ const Login = () => {
                 {/* 1st container starts here */}
 
                 <div className="container1 lg:order-2 flex flex-col justify-center items-center lg:h-screen lg:w-1/2">
-                    <h1 className='text-4xl pt-32 pb-12 lg:pb-1 text-center lg:pt-0 font-Poppins font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'>Welcome back! Nice to see you again</h1>
+                    <h1 className='text-4xl pt-32 pb-12 lg:pb-1 text-center lg:pt-0 font-Poppins font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#f87171] to-[#7c3aed]'>Welcome back! Nice to see you again</h1>
                     <Image className='lg:hidden' src='/login.svg' width={500} height={500} alt='loginImage'/>
                     <Image className='relative hidden lg:block -z-50' src='/login.gif' width={500} height={500} alt='loginImage'/>
                 </div>
@@ -38,10 +49,10 @@ const Login = () => {
                                     <input className='text-lg pl-4 p-2 outline-none text-[#ACB2BD] bg-transparent ' placeholder='Password' type="password" name="password" id="password" />
                                 </div>
                                 <div className='flex remember space-x-2 text-sm pl-2 mt-5 justify-between'>
-                                    <div class="theme flex items-center mr-2">
-                                        <input class="h-5 w-8 appearance-none bg-transparent bg-green-400 border border-[rgba(255,255,255,0.1)] rounded-full" type="checkbox" name="remember" id="remember" title="Change Theme" />
-                                        <div class="switch transition-all duration-300 relative -left-[1.9rem] border border-gray-300 bg-white h-[1rem] w-[1rem] rounded-full" id=""></div>
-                                        <label htmlFor="remember">Remember me</label>
+                                    <div className="rememberMe flex items-center">
+                                        <input onClick={changeRemember} className="h-5 w-8 appearance-none bg-transparent bg-green-400 border border-[rgba(255,255,255,0.1)] rounded-full" type="checkbox" name="remember" id="remember" title="Remember me" />
+                                        <div onClick={changeRemember} className={`switch transition-all duration-300 relative ${remember===0?'-left-[1.9rem]':'-left-[1.1rem]'} border border-gray-300 bg-white h-[1rem] w-[1rem] rounded-full`} id=""></div>
+                                        <label className='-ml-2' htmlFor="remember">Remember me</label>
                                     </div>
                                     <Link className='hover:text-[#ACB2BD]' href='/'>Forgot Password?</Link>
                                 </div>
