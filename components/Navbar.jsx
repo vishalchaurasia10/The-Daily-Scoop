@@ -32,12 +32,12 @@ const Navbar = () => {
             </ul>
         </div>
         <div className="topRight w-1/2 lg:w-1/4 flex justify-end items-center mr-1 lg:mr-24 space-x-2 lg:space-x-6">
-          <FontAwesomeIcon className=' w-6 h-6 hover:text-black' icon={faSearch} />
+          <FontAwesomeIcon className=' w-6 h-6 hover:text-gray-700' icon={faSearch} />
           <Link href={user?'/write':'/login'}>
-          <FontAwesomeIcon className='hidden lg:block w-6 h-6 hover:text-black' icon={faPenToSquare}/>
+          <FontAwesomeIcon className='hidden lg:block w-6 h-6 hover:text-gray-700' icon={faPenToSquare}/>
           </Link>
           <Link href={user?'/settings':'/login'}>
-          <FontAwesomeIcon className='loginImage w-6 h-6 hover:text-black' icon={faUserCircle} />
+          <FontAwesomeIcon className='loginImage w-6 h-6 hover:text-gray-700' icon={faUserCircle} />
           </Link>
           <ul onClick={changeExpand} id='expandNav' className="expand lg:hidden pb-1 flex flex-col space-y-1">
             <li className={`bar transition-all relative duration-300 ${expand === 1 ? 'rotate-45 top-[0.45rem]' : 'rotate-0'} w-6 h-[0.2rem] bg-gray-500 rounded-xl`}></li>
