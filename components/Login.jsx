@@ -19,7 +19,7 @@ const Login = () => {
 
     return (
         <>
-            <div className="mainBlock bg-cover bg-center bg-no-repeat bg-[url('/wave-haikei.svg')] flex flex-col lg:flex-row justify-center items-center">
+            <div className="mainBlock bg-cover bg-center bg-no-repeat bg-[url('/background.svg')] flex flex-col lg:flex-row justify-center items-center">
 
                 {/* 1st container starts here */}
 
