@@ -7,13 +7,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'nunito':['Nunito', 'sans-serif'],
-        'bangers':['Bangers', 'cursive'],
-        'josefin':['Josefin Sans', 'sans-serif'],
-        'lora':['Lora', 'serif'],
-        'Baloo':['Baloo Bhai 2', 'cursive'],
-        'Archivo':['Archivo Black', 'sans-serif'],
-        'Poppins':['Poppins', 'sans-serif'],
+        "Dancing-script": ["Dancing Script", "cursive"],
+        "jost": ["Jost", "sans-serif"],
+        "Poppins": ["Poppins", "sans-serif"],
       }
     },
   },

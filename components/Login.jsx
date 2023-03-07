@@ -24,9 +24,9 @@ const Login = () => {
                 <div className="container1 lg:order-2 flex flex-col justify-center items-center lg:h-screen lg:w-1/2">
                     <div className='text-lg text-[#392E33] p-4 tracking-wide pt-24 pb-8 lg:pb-1 text-center lg:pt-12 font-Poppins font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#f87171] to-[#7c3aed]'>
                         <span className='font-Poppins text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#f87171] to-[#7c3aed]'>Welcome! </span>
-                        back! We're glad you're here.
+                        back! We&apos;re glad you&apos;re here.
                         <span className='font-Poppins text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#f87171] to-[#7c3aed]'> Login </span>
-                        to access all your favorite content and stay connected with our community. Don't have an account yet?
+                        to access all your favorite content and stay connected with our community. Don&apos;t have an account yet?
                         <Link className=' bg-clip-text text-transparent bg-gradient-to-r from-[#f87171] to-[#7c3aed]' href='/register' > Sign up</Link> now and join the fun!
                     </div>
                     <Image className='lg:hidden' src='/login.svg' width={500} height={500} alt='loginImage' />

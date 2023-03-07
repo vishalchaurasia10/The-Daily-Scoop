@@ -1,17 +1,47 @@
-import React from 'react'
-import Image from 'next/image'
-import hero from '../public/hero2.jpg'
-
+import React, { useEffect, useRef, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-scroll';
 
 const Hero = () => {
+  const textRef = useRef(null);
+  const [isTextInView, setIsTextInView] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.target === textRef.current) {
+            setIsTextInView(entry.isIntersecting);
+          }
+        });
+      },
+      { root: null, rootMargin: "0px", threshold: 0.5 }
+    );
+
+    observer.observe(textRef.current);
+    console.log("executed")
+  }, []);
+
+  useEffect(() => {
+    if (isTextInView) {
+      setHasAnimated(true);
+    }
+  }, [isTextInView]);
+
   return (
     <>
-    <div className='flex w-full h-screen flex-col items-center justify-center'>
-      <p className='text-xl relative top-1/2 text-white font-bangers'>Our blog</p>
-      <p className='text-8xl relative top-1/2 text-white font-bangers'>Stories & ideas</p>
-      <p className='text-sm relative top-1/2 text-gray-300 font-lora italic'>Empowering individuals to live their best lives through the power of personal growth and self-discovery</p>
-      <Image className='w-full h-screen relative -top-[4.5rem] -z-10' src={hero} alt='hero'  />
-    </div>
+      <div className="hero h-screen w-full bg-center bg-cover bg-no-repeat bg-[url('/hero2.jpg')]">
+        <div className="bg-blend-multiply overflow-hidden flex flex-col justify-center items-center bg-[rgba(255,255,255,0.4)] h-full w-full">
+          <div ref={textRef} className={`intro lg:px-48`}>
+            <h1 className={`${hasAnimated ? 'scale-100' : 'scale-0'} transition-all duration-1000 font-Dancing-script text-center text-4xl lg:text-7xl`}>Welcome to my blogging site, where I share stories, insights, and ideas about the things that matter most to me.</h1>
+          </div>
+          <Link to='showTopPosts' smooth={true} duration={500}>
+            <FontAwesomeIcon className='items-end w-6 h-6 text-white cursor-pointer bg-black rounded-full p-2 absolute bottom-8 animate-bounce' icon={faArrowDown} />
+          </Link>
+        </div>
+      </div>
     </>
   )
 }
