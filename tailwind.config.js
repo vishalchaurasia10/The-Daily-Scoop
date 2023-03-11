@@ -10,6 +10,7 @@ module.exports = {
         "Dancing-script": ["Dancing Script", "cursive"],
         "jost": ["Jost", "sans-serif"],
         "Poppins": ["Poppins", "sans-serif"],
+        "monserrat": ["Montserrat", "sans-serif"],
       }
     },
   },

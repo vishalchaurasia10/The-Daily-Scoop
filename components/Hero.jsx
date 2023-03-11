@@ -21,7 +21,6 @@ const Hero = () => {
     );
 
     observer.observe(textRef.current);
-    console.log("executed")
   }, []);
 
   useEffect(() => {
@@ -38,7 +37,7 @@ const Hero = () => {
             <h1 className={`${hasAnimated ? 'scale-100' : 'scale-0'} transition-all duration-1000 font-Dancing-script text-center text-4xl lg:text-7xl`}>Welcome to my blogging site, where I share stories, insights, and ideas about the things that matter most to me.</h1>
           </div>
           <Link to='showTopPosts' smooth={true} duration={500}>
-            <FontAwesomeIcon className='items-end w-6 h-6 text-white cursor-pointer bg-black rounded-full p-2 absolute bottom-8 animate-bounce' icon={faArrowDown} />
+            <FontAwesomeIcon className='items-end w-8 h-8 text-white cursor-pointer bg-black rounded-full p-2 absolute bottom-8 animate-bounce' icon={faArrowDown} />
           </Link>
         </div>
       </div>

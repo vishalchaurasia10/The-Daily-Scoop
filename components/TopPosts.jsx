@@ -1,71 +1,67 @@
 import React from 'react'
 import Image from 'next/image'
+import { Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/scrollbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
-const TopPosts = () => {
+const TopPosts = (props) => {
     return (
         <>
-            <div className="mainblock w-full space-y-12">
-                <div className="heading w-full flex items-center justify-center space-x-4">
-                <div className='horizontalRule h-[0.1rem] relative  w-[30%] bg-white'></div>
-                <h1 className='text-6xl text-center font-bangers text-white'>Top Posts</h1>
-                <div className='horizontalRule h-[0.1rem] relative  w-[30%] bg-white'></div>
-                </div>
-                <div className="posts mx-auto flex bg-opacity-80 border border-[rgba(255,255,255,0.1)] shadow-lg backdrop-blur-[25px] z-30 relative w-[85%]">
-                    <div className="mainpost relative inline-block w-[71%] p-2 h-full">
-                        <div className="postimg flex">
-                            <Image className='w-full block' src='/hero1.jpg' width={300} height={200} alt='postimg' />
-                            <div className="postinfo top-1/2 left-1/2 text-center -translate-x-2/4 -translate-y-2/4 absolute text-white p-2">
-                                <div className="category">
-                                    <span className='mx-2 font-josefin'>Music</span>
-                                    <span className='mx-2 font-josefin'>Life</span>
-                                    <span className='mx-2 font-josefin'>1 hour ago</span>
-                                </div>
-                                <div className="title text-lg ml-2 font-Baloo font-medium">
-                                    Learn to take your next project to internet
-                                </div>
-                                <div className=" font-josefin ">
-                                    Vishal Chaurasia
-                                </div>
-                            </div>
-                        </div>
+            <Swiper className='lg:w-1/2 h-[35rem] rounded-lg shadow-2xl my-10'
+                modules={[Autoplay]}
+                direction={props.direction}
+                spaceBetween={0}
+                slidesPerView={props.slidesPerView}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                onSwiper={(swiper) => console.log(swiper)}
+                onSlideChange={() => console.log('slide change')}
+            >
+                <SwiperSlide className=''>
+                    <div className="img bg-cover bg-center w-full h-full hover:scale-105 transition-all duration-500 bg-[url('/hero2.jpg')]">
                     </div>
-                    <div className="otherposts relative inline-block w-[37%]">
-                        <div className="p-2 pl-0 postimg">
-                            <Image className='w-full' src='/postimg.jpg' width={300} height={200} alt='postimg' />
-                            <div className="postinfo top-1/4 left-1/2 text-center -translate-x-2/4 -translate-y-2/4 absolute text-white p-2">
-                                <div className="category">
-                                    <span className='mx-2 font-josefin'>Music</span>
-                                    <span className='mx-2 font-josefin'>Life</span>
-                                    <span className='mx-2 font-josefin'>1 hour ago</span>
-                                </div>
-                                <div className="title text-lg ml-2 font-Baloo font-medium">
-                                    Learn to take your next project to internet
-                                </div>
-                                <div className=" font-josefin ">
-                                    Vishal Chaurasia
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="p-2 pl-0 pt-0 postimg">
-                            <Image className='w-full' src='/postimg.jpg' width={300} height={200} alt='postimg' />
-                            <div className="postinfo top-3/4 left-1/2 text-center -translate-x-2/4 -translate-y-2/4 absolute text-white p-2">
-                                <div className="category">
-                                    <span className='mx-2 font-josefin'>Music</span>
-                                    <span className='mx-2 font-josefin'>Life</span>
-                                    <span className='mx-2 font-josefin'>1 hour ago</span>
-                                </div>
-                                <div className="title text-lg ml-2 font-Baloo font-medium">
-                                    Learn to take your next project to internet
-                                </div>
-                                <div className=" font-josefin ">
-                                    Vishal Chaurasia
-                                </div>
-                            </div>
-                        </div>
+                    <div className="data relative lg:-top-48 -top-52 text-white p-4">
+                        <h2 className='text-3xl font-jost'>How to learn JavaScript</h2>
+                        <p className="tag font-jost text-sm cursor-pointer font-light">#Tech</p>
+                        <span className='font-medium text-sm font-jost'>Vishal Chaurasia | </span><span className='text-xs font-light font-jost'>1 Mar 2023, 1:58 am</span>
+                        <p className='font-jost text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, neque!...</p>
+                        <button className='flex pl-3 p-[0.4rem] my-2 hover:border hover:bg-[rgba(255,255,255,0.3)] border-[rgba(255,255,255,0.5)] rounded-3xl items-center space-x-4 transition-all hover:shadow-2xl shadow-white duration-150'>Read more
+                            <FontAwesomeIcon className='w-4 h-4 pt-1' icon={faAngleRight} />
+                        </button>
                     </div>
-                </div>
-            </div>
+                </SwiperSlide>
+                <SwiperSlide className=''>
+                    <div className="img bg-cover bg-center w-full h-full hover:scale-105 transition-all duration-500 bg-[url('/hero2.jpg')]">
+                    </div>
+                    <div className="data relative lg:-top-48 -top-52 text-white p-4">
+                        <h2 className='text-3xl font-jost'>How to learn JavaScript</h2>
+                        <p className="tag font-jost text-sm cursor-pointer font-light">#Tech</p>
+                        <span className='font-medium text-sm font-jost'>Vishal Chaurasia | </span><span className='text-xs font-light font-jost'>1 Mar 2023, 1:58 am</span>
+                        <p className='font-jost text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, neque!...</p>
+                        <button className='flex pl-3 p-[0.4rem] my-2 hover:border hover:bg-[rgba(255,255,255,0.3)] border-[rgba(255,255,255,0.5)] rounded-3xl items-center space-x-4 transition-all hover:shadow-2xl shadow-white duration-150'>Read more
+                            <FontAwesomeIcon className='w-4 h-4 pt-1' icon={faAngleRight} />
+                        </button>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide className=''>
+                    <div className="img bg-cover bg-center w-full h-full hover:scale-105 transition-all duration-500 bg-[url('/hero2.jpg')]">
+                    </div>
+                    <div className="data relative lg:-top-48 -top-52 text-white p-4">
+                        <h2 className='text-3xl font-jost'>How to learn JavaScript</h2>
+                        <p className="tag font-jost text-sm cursor-pointer font-light">#Tech</p>
+                        <span className='font-medium text-sm font-jost'>Vishal Chaurasia | </span><span className='text-xs font-light font-jost'>1 Mar 2023, 1:58 am</span>
+                        <p className='font-jost text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, neque!...</p>
+                        <button className='flex pl-3 p-[0.4rem] my-2 hover:border hover:bg-[rgba(255,255,255,0.3)] border-[rgba(255,255,255,0.5)] rounded-3xl items-center space-x-4 transition-all hover:shadow-2xl shadow-white duration-150'>Read more
+                            <FontAwesomeIcon className='w-4 h-4 pt-1' icon={faAngleRight} />
+                        </button>
+                    </div>
+                </SwiperSlide>
+            </Swiper>
         </>
     )
 }

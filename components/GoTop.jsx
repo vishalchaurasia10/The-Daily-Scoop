@@ -30,7 +30,7 @@ const GoTop = () => {
     
     return (
         <div>
-                {showGoTop && <FontAwesomeIcon className='fixed w-5 h-5 cursor-pointer bottom-8 right-4 text-white bg-black p-2 rounded-full shadow-2xl' icon={faAngleUp} onClick={handleClick} />}
+                {showGoTop && <FontAwesomeIcon className='fixed z-50 w-8 h-8 cursor-pointer bottom-8 right-4 text-white bg-black p-2 rounded-full shadow-2xl' icon={faAngleUp} onClick={handleClick} />}
         </div>
     )
 }
