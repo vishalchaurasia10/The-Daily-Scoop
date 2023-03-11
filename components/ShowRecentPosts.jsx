@@ -4,19 +4,18 @@ import RecentPosts from './RecentPosts'
 const ShowRecentPosts = () => {
     return (
         <>
-            <div className='mb-8 mt-16'>
-                <div className="heading w-full flex items-center justify-center space-x-4">
-                    <div className='horizontalRule h-[0.1rem] relative w-[30%] bg-white'></div>
-                    <h1 className='text-6xl text-white font-bangers text-center'>Recent Posts</h1>
-                    <div className='horizontalRule h-[0.1rem] relative  w-[30%] bg-white'></div>
+            <div id='showRecentPosts' className="posts pb-12 pt-6 px-4 lg:px-20 flex flex-col bg-gradient-to-r from-[#BAD0D9] to-[#F4A895]">
+                <h1 className='font-monserrat flex items-center text-4xl lg:text-6xl font-semibold '>
+                    Recent Posts
+                    <span className='h-[0.1rem] ml-4 w-1/4 bg-black block'></span>
+                </h1>
+                <div className="cards lg:flex lg:flex-wrap lg:my-7 w-full">
+                    <RecentPosts />
+                    <RecentPosts />
+                    <RecentPosts />
+                    <RecentPosts />
+                    <RecentPosts />
                 </div>
-            </div>
-            <div>
-                <RecentPosts />
-                <RecentPosts />
-                <RecentPosts />
-                <RecentPosts />
-                <RecentPosts />
             </div>
         </>
     )

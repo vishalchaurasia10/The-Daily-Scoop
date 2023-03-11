@@ -30,7 +30,7 @@ const TopPosts = (props) => {
                         <p className="tag font-jost text-sm cursor-pointer font-light">#Tech</p>
                         <span className='font-medium text-sm font-jost'>Vishal Chaurasia | </span><span className='text-xs font-light font-jost'>1 Mar 2023, 1:58 am</span>
                         <p className='font-jost text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, neque!...</p>
-                        <button className='flex pl-3 p-[0.4rem] my-2 hover:border hover:bg-[rgba(255,255,255,0.3)] border-[rgba(255,255,255,0.5)] rounded-3xl items-center space-x-4 transition-all hover:shadow-2xl shadow-white duration-150'>Read more
+                        <button className='flex pl-3 p-[0.4rem] my-2 hover:border hover:bg-[rgba(255,255,255,0.3)] border-[rgba(255,255,255,0.1)] rounded-3xl items-center space-x-4 transition-all hover:shadow-2xl shadow-white duration-150'>Read more
                             <FontAwesomeIcon className='w-4 h-4 pt-1' icon={faAngleRight} />
                         </button>
                     </div>
@@ -43,7 +43,7 @@ const TopPosts = (props) => {
                         <p className="tag font-jost text-sm cursor-pointer font-light">#Tech</p>
                         <span className='font-medium text-sm font-jost'>Vishal Chaurasia | </span><span className='text-xs font-light font-jost'>1 Mar 2023, 1:58 am</span>
                         <p className='font-jost text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, neque!...</p>
-                        <button className='flex pl-3 p-[0.4rem] my-2 hover:border hover:bg-[rgba(255,255,255,0.3)] border-[rgba(255,255,255,0.5)] rounded-3xl items-center space-x-4 transition-all hover:shadow-2xl shadow-white duration-150'>Read more
+                        <button className='flex pl-3 p-[0.4rem] my-2 hover:border hover:bg-[rgba(255,255,255,0.3)] border-[rgba(255,255,255,0.1)] rounded-3xl items-center space-x-4 transition-all hover:shadow-2xl shadow-white duration-150'>Read more
                             <FontAwesomeIcon className='w-4 h-4 pt-1' icon={faAngleRight} />
                         </button>
                     </div>
@@ -56,7 +56,7 @@ const TopPosts = (props) => {
                         <p className="tag font-jost text-sm cursor-pointer font-light">#Tech</p>
                         <span className='font-medium text-sm font-jost'>Vishal Chaurasia | </span><span className='text-xs font-light font-jost'>1 Mar 2023, 1:58 am</span>
                         <p className='font-jost text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, neque!...</p>
-                        <button className='flex pl-3 p-[0.4rem] my-2 hover:border hover:bg-[rgba(255,255,255,0.3)] border-[rgba(255,255,255,0.5)] rounded-3xl items-center space-x-4 transition-all hover:shadow-2xl shadow-white duration-150'>Read more
+                        <button className='flex pl-3 p-[0.4rem] my-2 hover:border hover:bg-[rgba(255,255,255,0.3)] border-[rgba(255,255,255,0.1)] rounded-3xl items-center space-x-4 transition-all hover:shadow-2xl shadow-white duration-150'>Read more
                             <FontAwesomeIcon className='w-4 h-4 pt-1' icon={faAngleRight} />
                         </button>
                     </div>
