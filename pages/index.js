@@ -1,19 +1,13 @@
-import react from "react"
-import Link from "next/link"
-import Meta from "../components/Meta"
-import Hero from "../components/Hero"
-import ShowTopPosts from "../components/ShowTopPosts"
-import ShowRecentPosts from "../components/ShowRecentPosts"
-import GoTop from "../components/GoTop"
+import Hero from "../components/Layout/Hero"
+import ShowTopPosts from "../components/Posts/ShowTopPosts"
+import ShowRecentPosts from "../components/Posts/ShowRecentPosts"
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Meta />
       <ShowTopPosts />
       <ShowRecentPosts />
-      <GoTop />
     </>
   )
 }

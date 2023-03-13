@@ -1,5 +1,5 @@
 import React from 'react'
-import RecentPosts from './RecentPosts'
+import RecentPosts from './Posts'
 
 const ShowRecentPosts = () => {
     return (

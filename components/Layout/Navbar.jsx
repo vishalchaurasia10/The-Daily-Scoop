@@ -11,6 +11,10 @@ const Navbar = () => {
     setNavExpand(!navExpand)
   }
 
+  const handleExpand = () => {
+    setNavExpand(!navExpand)
+  }
+
   return (
     <>
       <nav className='p-3 px-4 lg:px-8 text-white flex items-center transition-all backdrop-blur-3xl bg-[rgba(255,255,255,0.1)] duration-300 fixed top-0 shadow-2xl w-full z-50'>
@@ -19,10 +23,10 @@ const Navbar = () => {
         </div>
         <div className={`hidden lg:block center lg:w-1/3`}>
           <ul className={`lg:flex lg:flex-row flex-col justify-center font-poppins text-lg items-center space-x-8`}>
-            <li className='cursor-pointer'>Home</li>
-            <li className='cursor-pointer'>Blogs</li>
-            <li className='cursor-pointer'>About Me</li>
-            <li className='cursor-pointer'>Contact Me</li>
+            <li className='cursor-pointer'><Link href='/'>Home</Link></li>
+            <li className='cursor-pointer'><Link href='/blogs'>Blogs</Link></li>
+            <li className='cursor-pointer'><Link href='/about'>About Me</Link></li>
+            <li className='cursor-pointer'><Link href='/contact'>Contact Me</Link></li>
           </ul>
         </div>
         <div className="topright flex items-center justify-end space-x-4 w-1/4 lg:w-1/3">
@@ -42,10 +46,10 @@ const Navbar = () => {
       </nav>
       <div className={`expanded lg:hidden w-full text-white z-40 h-screen flex items-center justify-center backdrop-blur-3xl fixed top-0 transition-all duration-500 ${navExpand ? '' : 'translate-x-[60rem]'}`}>
         <ul className={`flex text-2xl space-y-4 flex-col justify-center font-jost text-center items-center`}>
-          <li className='cursor-pointer'>Home</li>
-          <li className='cursor-pointer'>Blogs</li>
-          <li className='cursor-pointer'>About Me</li>
-          <li className='cursor-pointer'>Contact Me</li>
+          <li onClick={handleExpand} className='cursor-pointer'><Link href='/'>Home</Link></li>
+          <li onClick={handleExpand} className='cursor-pointer'><Link href='/blogs'>Blogs</Link></li>
+          <li onClick={handleExpand} className='cursor-pointer'><Link href='/about'>About Me</Link></li>
+          <li onClick={handleExpand} className='cursor-pointer'><Link href='/contact'>Contact Me</Link></li>
         </ul>
       </div>
     </>

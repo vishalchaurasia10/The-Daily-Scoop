@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
-const RecentPosts = () => {
+const Posts = (props) => {
     return (
         <>
-            <div className="card lg:w-[32%] md:w-[47%] shadow-xl bg-[rgba(255,255,255,0.1)]  shadow-[#142c41] border border-[rgba(255,255,255,0.1)] rounded-lg md:mx-2 my-4 md:my-3 md:space-y-2">
+            <div className={`card lg:w-[${props.width||'32%'}] md:w-[47%] shadow-xl bg-[rgba(255,255,255,0.1)]  shadow-[#142c41] border border-[rgba(255,255,255,0.1)] rounded-lg md:mx-2 my-4 md:my-3 md:space-y-2`}>
                 <div className="img overflow-hidden">
                     <Image className='rounded-t-lg w-full transition-all duration-500 hover:scale-105' width={500} height={500} src="/hero2.jpg" alt="post_image" />
                 </div>
@@ -25,4 +25,4 @@ const RecentPosts = () => {
     )
 }
 
-export default RecentPosts
+export default Posts
