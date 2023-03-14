@@ -1,6 +1,6 @@
 import React from 'react'
 import Sidebar from '../../components/Layout/Sidebar'
-import Posts from '../../components/Posts/Posts'
+import Posts from '../../components/Posts/PostsCard'
 
 const BlogHome = () => {
   return (

@@ -19,6 +19,7 @@
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
     "express": "^4.18.2",
+    "mongodb": "^3.5.9",
     "mongoose": "^6.8.3",
     "multer": "^1.4.5-lts.1",
     "next": "13.1.1",
@@ -31,5 +32,18 @@
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",
     "tailwindcss": "^3.2.4"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishalchaurasia10/BlogSite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishalchaurasia10/BlogSite/issues"
+  },
+  "homepage": "https://github.com/vishalchaurasia10/BlogSite#readme"
 }

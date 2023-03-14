@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoon, faSearch, faSun, } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 
 const Navbar = () => {
 
   const [navExpand, setNavExpand] = useState(false)
+  const [expandSearch, setExpandSearch] = useState(false)
 
   const expandNav = () => {
     setNavExpand(!navExpand)
@@ -13,6 +14,10 @@ const Navbar = () => {
 
   const handleExpand = () => {
     setNavExpand(!navExpand)
+  }
+
+  const handleSearch = () => {
+    setExpandSearch(!expandSearch)
   }
 
   return (
@@ -30,13 +35,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="topright flex items-center justify-end space-x-4 w-1/4 lg:w-1/3">
-          <FontAwesomeIcon className='w-5 h-5 cursor-pointer' icon={faSearch} />
-          <div className="mode flex flex-col h-5 overflow-hidden">
-            <div className={`flex flex-col transition-all duration-500 space-y-4`}>
-              <FontAwesomeIcon className={`w-5 h-5 cursor-pointer`} id='moon' icon={faMoon} />
-              <FontAwesomeIcon className={` w-5 h-5 pl-[0.1rem] cursor-pointer transition-all duration-500`} id='sun' icon={faSun} />
-            </div>
-          </div>
+          <input className={`${expandSearch?'':'-translate-y-16'} rounded-3xl text-black pl-4 p-[3px] bg-[rgba(255,255,255)] outline-none border border-[rgba(255,255,255,0.1)] shadow-2xl shadow-black transition-all duration-300`} placeholder='Start searching...' type="text" name="search" id="search" />
+          <FontAwesomeIcon onClick={handleSearch} className='w-5 h-5 cursor-pointer' icon={faSearch} />
           <div className="hamburger lg:hidden space-y-1">
             <div onClick={expandNav} className={`${navExpand ? '-rotate-45 translate-y-[0.45rem]' : ''} w-6 transition-all duration-300 rounded-full bg-white h-1`}></div>
             <div onClick={expandNav} className={`${navExpand ? 'scale-0' : ''} w-6 transition-all duration-300 rounded-full bg-white h-1`}></div>
