@@ -11,6 +11,7 @@ module.exports = {
         "jost": ["Jost", "sans-serif"],
         "Poppins": ["Poppins", "sans-serif"],
         "monserrat": ["Montserrat", "sans-serif"],
+        "tilt-wrap" : ["Tilt Warp", "cursive"]
       }
     },
   },
