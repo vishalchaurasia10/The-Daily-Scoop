@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
+import { useRouter } from 'next/router';
 
 const Navbar = () => {
 
+  const router = useRouter();
   const [navExpand, setNavExpand] = useState(false)
   const [expandSearch, setExpandSearch] = useState(false)
+  const [query, setQuery] = useState('')
 
   const expandNav = () => {
     setNavExpand(!navExpand)
@@ -17,7 +20,27 @@ const Navbar = () => {
   }
 
   const handleSearch = () => {
-    setExpandSearch(!expandSearch)
+    const input = document.getElementById('searchInput')
+    if(!expandSearch){
+      input.focus()
+      setExpandSearch(true)
+    }else
+    {
+      input.blur()
+      setExpandSearch(false)
+      if(query === ''){
+        return
+      }
+      else
+      {
+        router.push(`/blogs/search/${query}?search=true`)
+        setQuery('')
+      }
+    }
+  }
+
+  const handleChange = (e) => {
+    setQuery(e.target.value)
   }
 
   return (
@@ -35,7 +58,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="topright flex items-center justify-end space-x-4 w-1/4 lg:w-1/3">
-          <input className={`${expandSearch?'':'-translate-y-16'} rounded-3xl text-black pl-4 p-[3px] bg-[rgba(255,255,255)] outline-none border border-[rgba(255,255,255,0.1)] shadow-2xl shadow-black transition-all duration-300`} placeholder='Start searching...' type="text" name="search" id="search" />
+          <input value={query} onChange={handleChange} className={`${expandSearch?'':'-translate-y-16'} rounded-3xl text-black pl-4 p-[3px] bg-[rgba(255,255,255)] outline-none border border-[rgba(255,255,255,0.1)] shadow-2xl shadow-black transition-all duration-300`} placeholder='Search with Title...' type="text" name="search" id="searchInput" />
           <FontAwesomeIcon onClick={handleSearch} className='w-5 h-5 cursor-pointer' icon={faSearch} />
           <div className="hamburger lg:hidden space-y-1">
             <div onClick={expandNav} className={`${navExpand ? '-rotate-45 translate-y-[0.45rem]' : ''} w-6 transition-all duration-300 rounded-full bg-white h-1`}></div>

@@ -1,36 +1,51 @@
+import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import RecentPosts from './PostsCard'
+import Banner from '../../../components/Layout/Banner'
+import Posts from '../../../components/Posts/PostsCard'
 
-const ShowRecentPosts = () => {
+const Query = () => {
 
+    const router = useRouter()
     const [blogs, setBlogs] = useState([])
+    let searchString
 
-    const getRecentBlogs = async () => {
-        const response = await fetch(`http://localhost:3000/api/getBlogs`, {
-            method: 'GET',
+    if (router.query.category) {
+        searchString = { category: router.query.query };
+    }
+    else if (router.query.tags) {
+        searchString = { tags: router.query.query };
+    }
+    else if (router.query.search) {
+        let words = router.query.query.split(' ')
+        let slug = words.join('-')
+        searchString = { slug: slug };
+    }
+
+    const getBlogs = async () => {
+        const response = await fetch(`http://localhost:3000/api/search`, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
+            body: JSON.stringify(searchString)
         })
         const json = await response.json();
-        setBlogs(json.reverse().slice(0, 5));
+        setBlogs(json);
     }
 
     useEffect(() => {
-        getRecentBlogs();
-    }, [])
+        getBlogs();
+    }, [router.query.query])
+
 
     return (
         <>
-            <div id='showRecentPosts' className="posts pb-12 pt-16 -top-12 lg:pt-48 relative  lg:-top-[15rem] px-4 text-white lg:px-20 flex flex-col bg-[#0F6292]">
-                <h1 className='font-monserrat pb-4 lg:pb-0 flex items-center text-4xl lg:text-6xl font-semibold '>
-                    Recent Posts
-                    <span className='h-[0.1rem] ml-4 w-1/4 bg-white block'></span>
-                </h1>
+            <Banner />
+            <div id='allPosts' className="posts flex flex-col lg:flex-row pb-8 pt-16 px-4 text-white lg:px-20 bg-[#0F6292]">
                 <div className="cards md:flex md:flex-wrap lg:my-7 w-full md:mx-auto ">
                     {blogs.map((blog) => {
                         return (
-                            <RecentPosts
+                            <Posts
                                 key={blog._id}
                                 title={blog.title}
                                 category={blog.category}
@@ -50,4 +65,4 @@ const ShowRecentPosts = () => {
     )
 }
 
-export default ShowRecentPosts
+export default Query
