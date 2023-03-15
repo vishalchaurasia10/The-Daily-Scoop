@@ -1,7 +1,7 @@
 import connectToMongo from '../../utils/db'
 import Posts from '../../models/Posts'
 
-connectToMongo()
+// connectToMongo()
 
 export default async function handler(req,res)
 {

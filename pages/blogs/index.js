@@ -7,7 +7,7 @@ const BlogHome = () => {
 
   const [blogs, setBlogs] = useState([])
   const getBlogs = async () => {
-    const response = await fetch(`http://localhost:3000/api/getBlogs`, {
+    const response = await fetch(`/api/getBlogs`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

@@ -24,7 +24,7 @@ const Sidebar = (props) => {
                     {Array.from(categories).map((category, index) => {
                         return (
                             <li key={index} className='cursor-pointer w-fit px-3 hover:bg-[rgba(255,255,255,0.3)] rounded-3xl transition-all duration-150'>
-                                <Link className='flex items-center space-x-1' href={`http://localhost:3000/blogs/search/${category}?category=true`}>
+                                <Link className='flex items-center space-x-1' href={`/blogs/search/${category}?category=true`}>
                                     <FontAwesomeIcon className='text-[0.5rem]' icon={faCircle} /><span className='font-jost text-lg'>{category}</span>
                                 </Link>
                             </li>
@@ -39,7 +39,7 @@ const Sidebar = (props) => {
                     {Array.from(tags).map((tag, index) => {
                         return (
                             <li key={index} className='flex cursor-pointer px-3 items-center space-x-1 hover:bg-[rgba(255,255,255,0.3)] rounded-3xl transition-all duration-150 mr-1 text-sm font-jost'>
-                                <Link className='flex items-center space-x-1' href={`http://localhost:3000/blogs/search/${tag}?tags=true`}>
+                                <Link className='flex items-center space-x-1' href={`/blogs/search/${tag}?tags=true`}>
                                     <FontAwesomeIcon icon={faTags} /><span className='font-jost text-lg'>{tag}</span>
                                 </Link>
                             </li>

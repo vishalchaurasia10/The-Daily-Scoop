@@ -9,7 +9,7 @@ const SingleBlog = () => {
   const [blog, setBlog] = useState([])
 
   const searchBlog = async () => {
-    const res = await fetch('http://localhost:3000/api/search', {
+    const res = await fetch('/api/search', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -47,9 +47,9 @@ const SingleBlog = () => {
 
   return (
     <>
-      <div className="blogWrapper text-white py-20 lg:py-32 px-3 space-y-5 lg:px-40">
+      <div className="blogWrapper text-white py-24 lg:py-32 px-3 space-y-5 lg:px-40">
         <h1 className='text-center text-4xl lg:text-6xl font-tilt-wrap tracking-wide font-bold'>{blog[0]?.title}</h1>
-        <div className='author flex items-center justify-center  font-jost'>
+        <div className='author flex flex-col lg:flex-row items-center justify-center  font-jost'>
           <h2> <span className='font-bold text-xl'>Written by : </span><span className='text-lg'>{blog[0]?.author}</span> | </h2>
           <h2>&nbsp;{formatDate(blog[0]?.createdAt)}</h2>
         </div>
