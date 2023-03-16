@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const mongooseURI = process.env.MONGODB_URI;
+const mongooseURI = "mongodb+srv://vishalchaurasia10:time_to_do_blogging@blogsinfo.pvppisz.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.set('strictQuery', true)
 
