@@ -9,7 +9,7 @@ const SingleBlog = () => {
   const [blog, setBlog] = useState([])
 
   const searchBlog = async () => {
-    const res = await fetch('/api/search', {
+    const res = await fetch('https://the-daily-scoop-backend.onrender.com/api/blogs/search/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -24,12 +24,10 @@ const SingleBlog = () => {
     searchBlog()
   }, [])
 
-  console.log(blog)
   function createMarkup() {
     return { __html: blog[0]?.content };
   }
 
-  console.log(blog[0]?.title)
 
   function formatDate(inputDate) {
     const date = new Date(inputDate);

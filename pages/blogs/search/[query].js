@@ -22,7 +22,7 @@ const Query = () => {
     }
 
     const getBlogs = async () => {
-        const response = await fetch(`/api/search`, {
+        const response = await fetch(`https://the-daily-scoop-backend.onrender.com/api/blogs/search`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

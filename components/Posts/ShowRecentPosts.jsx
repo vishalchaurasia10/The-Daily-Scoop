@@ -6,7 +6,7 @@ const ShowRecentPosts = () => {
     const [blogs, setBlogs] = useState([])
 
     const getRecentBlogs = async () => {
-        const response = await fetch(`/api/getBlogs`, {
+        const response = await fetch(`https://the-daily-scoop-backend.onrender.com/api/blogs/getBlogs`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

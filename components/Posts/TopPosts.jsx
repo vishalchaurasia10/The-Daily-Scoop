@@ -12,7 +12,7 @@ const TopPosts = (props) => {
     const [blogs, setBlogs] = useState([])
 
     const getTopBlogs = async () => {
-        const response = await fetch(`/api/getBlogs`, {
+        const response = await fetch(`https://the-daily-scoop-backend.onrender.com/api/blogs/getBlogs`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
