@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import RecentPosts from './PostsCard'
 import constants from '../../constants/constants'
 import Link from 'next/link'
+import Spinner from '../Layout/Spinner';
 
 const ShowRecentPosts = () => {
 
     const [blogs, setBlogs] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     const getRecentBlogs = async () => {
         const response = await fetch(`${constants.API_URL}/api/blogs/getBlogs`, {
@@ -15,6 +17,7 @@ const ShowRecentPosts = () => {
             },
         })
         const json = await response.json();
+        setIsLoading(false);
         setBlogs(json.reverse().slice(0, 5));
     }
 
@@ -29,7 +32,10 @@ const ShowRecentPosts = () => {
                     Recent Posts
                     <span className='h-[0.1rem] ml-4 w-1/4 bg-white block'></span>
                 </h1>
-                <div className="cards md:flex md:flex-wrap lg:my-7 w-full md:mx-auto ">
+                {isLoading && <div className="spinner py-40 w-full flex items-center justify-center">
+                    <Spinner />
+                </div>}
+                {!isLoading && <div className="cards md:flex md:flex-wrap lg:my-7 w-full md:mx-auto ">
                     {blogs.map((blog) => {
                         return (
                             <RecentPosts
@@ -50,11 +56,11 @@ const ShowRecentPosts = () => {
                         <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md px-8 py-3 font-medium tracking-wide text-white text-xl shadow-2xl border border-slate-100/20 hover:scale-110 transition duration-300 ease-out  active:translate-y-1">
                             <span className="absolute inset-0 bg-gradient-to-r bg-[#42709a] opacity-0  transition duration-300 ease-out  group-hover:opacity-100  group-active:opacity-90"></span>
                             <Link href='/blogs'>
-                                <span className="relative">Read More</span>
+                                <span className="relative font-jost">Read More</span>
                             </Link>
                         </button>
                     </div>
-                </div>
+                </div>}
             </div>
         </>
     )

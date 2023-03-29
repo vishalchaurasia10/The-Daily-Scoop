@@ -7,25 +7,11 @@ import 'swiper/css/scrollbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faCircle, faTags } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
-import constants from '../../constants/constants'
+
 
 const TopPosts = (props) => {
-    const [blogs, setBlogs] = useState([])
 
-    const getTopBlogs = async () => {
-        const response = await fetch(`${constants.API_URL}/api/blogs/getBlogs`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-        const json = await response.json();
-        setBlogs(json.slice(0, 5));
-    }
-
-    useEffect(() => {
-        getTopBlogs();
-    }, [])
+    const [blogs, setBlogs] = useState(props.blogs)
 
     const reduceStringTo10Words = (str, max) => {
         const words = str.split(' ')
