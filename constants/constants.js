@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://the-daily-scoop-backend.onrender.com';
 
 module.exports = {
     API_URL,
