@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import Banner from '../../components/Layout/Banner'
 import Sidebar from '../../components/Layout/Sidebar'
 import Posts from '../../components/Posts/PostsCard'
+import constants from '../../constants/constants'
 
 const BlogHome = () => {
 
   const [blogs, setBlogs] = useState([])
   const getBlogs = async () => {
-    const response = await fetch(`https://the-daily-scoop-backend.onrender.com/api/blogs/getBlogs`, {
+    const response = await fetch(`${constants.API_URL}/api/blogs/getBlogs`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

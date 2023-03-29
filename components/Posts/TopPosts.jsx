@@ -7,12 +7,13 @@ import 'swiper/css/scrollbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faCircle, faTags } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import constants from '../../constants/constants'
 
 const TopPosts = (props) => {
     const [blogs, setBlogs] = useState([])
 
     const getTopBlogs = async () => {
-        const response = await fetch(`https://the-daily-scoop-backend.onrender.com/api/blogs/getBlogs`, {
+        const response = await fetch(`${constants.API_URL}/api/blogs/getBlogs`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -78,7 +79,7 @@ const TopPosts = (props) => {
                                         <FontAwesomeIcon className='text-sm pr-1' icon={faTags} /><span className='font-jost text-sm cursor-pointer font-light'>{blog.tags}</span>
                                     </span>
                                 </div>
-                                <span className='font-medium text-sm font-jost'>{blog.author} | </span><span className='text-xs font-light font-jost'>{formatDate(blog.date)}</span>
+                                <span className='font-medium text-sm font-jost'>{blog.author} | </span><span className='text-xs font-light font-jost'>{formatDate(blog.createdAt)}</span>
                                 <p className='font-jost text-lg'>{reduceStringTo10Words(blog.preview, 10)}</p>
                                 <Link href={`/blogs/${blog.slug}`}>
                                     <button className='flex pl-3 -ml-1 lg:ml-0 p-[0.4rem] my-2 mb-3 hover:bg-[rgba(255,255,255,0.3)] rounded-3xl items-center space-x-4 transition-all hover:-translate-y-[0.1rem] hover:shadow-2xl shadow-white duration-150'>Read more

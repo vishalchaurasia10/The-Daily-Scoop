@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import RecentPosts from './PostsCard'
+import constants from '../../constants/constants'
+import Link from 'next/link'
 
 const ShowRecentPosts = () => {
 
     const [blogs, setBlogs] = useState([])
 
     const getRecentBlogs = async () => {
-        const response = await fetch(`https://the-daily-scoop-backend.onrender.com/api/blogs/getBlogs`, {
+        const response = await fetch(`${constants.API_URL}/api/blogs/getBlogs`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
         })
         const json = await response.json();
-        setBlogs(json.reverse().slice(0, 5));
+        setBlogs(json.reverse().slice(0, 3));
     }
 
     useEffect(() => {
@@ -44,6 +46,14 @@ const ShowRecentPosts = () => {
                             />
                         )
                     })}
+                    <div className={`wrapper py-10  ${blogs.length === 3 ? 'lg:w-full lg:py-10 ' : 'lg:w-[32%] lg:py-0'}  flex justify-center items-center`}>
+                        <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md px-8 py-3 font-medium tracking-wide text-white text-xl shadow-2xl border border-slate-100/20 hover:scale-110 transition duration-300 ease-out  active:translate-y-1">
+                            <span className="absolute inset-0 bg-gradient-to-r bg-[#42709a] opacity-0  transition duration-300 ease-out  group-hover:opacity-100  group-active:opacity-90"></span>
+                            <Link href='/blogs'>
+                                <span className="relative">Read More</span>
+                            </Link>
+                        </button>
+                    </div>
                 </div>
             </div>
         </>

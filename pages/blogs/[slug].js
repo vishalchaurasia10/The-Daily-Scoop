@@ -2,6 +2,7 @@ import { faCircle, faTags } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
+import constants from '../../constants/constants'
 
 const SingleBlog = () => {
   const router = useRouter()
@@ -9,7 +10,7 @@ const SingleBlog = () => {
   const [blog, setBlog] = useState([])
 
   const searchBlog = async () => {
-    const res = await fetch('https://the-daily-scoop-backend.onrender.com/api/blogs/search/', {
+    const res = await fetch(`${constants.API_URL}/api/blogs/search/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
