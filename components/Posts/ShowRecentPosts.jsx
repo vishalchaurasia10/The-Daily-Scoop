@@ -15,7 +15,7 @@ const ShowRecentPosts = () => {
             },
         })
         const json = await response.json();
-        setBlogs(json.reverse().slice(0, 3));
+        setBlogs(json.reverse().slice(0, 5));
     }
 
     useEffect(() => {
