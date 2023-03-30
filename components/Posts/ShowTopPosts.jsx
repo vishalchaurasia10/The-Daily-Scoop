@@ -8,7 +8,7 @@ const ShowTopPosts = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   const getTopBlogs = async () => {
-    const response = await fetch(`${constants.API_URL}/api/blogs/getBlogs`, {
+    const response = await fetch(`${constants.API_URL}/api/blogs/getBlogs?count=5`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ const ShowTopPosts = () => {
     })
     const json = await response.json();
     setIsLoading(false);
-    setBlogs(json.slice(0, 5));
+    setBlogs(json.blogs.slice(0, 5));
   }
 
   useEffect(() => {

@@ -10,7 +10,7 @@ const ShowRecentPosts = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     const getRecentBlogs = async () => {
-        const response = await fetch(`${constants.API_URL}/api/blogs/getBlogs`, {
+        const response = await fetch(`${constants.API_URL}/api/blogs/getBlogs?count=5`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ const ShowRecentPosts = () => {
         })
         const json = await response.json();
         setIsLoading(false);
-        setBlogs(json.reverse().slice(0, 5));
+        setBlogs(json.blogs.reverse().slice(0, 5));
     }
 
     useEffect(() => {
