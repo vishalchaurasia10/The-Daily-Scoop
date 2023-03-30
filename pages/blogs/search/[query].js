@@ -4,6 +4,7 @@ import Banner from '../../../components/Layout/Banner'
 import Posts from '../../../components/Posts/PostsCard'
 import constants from '../../../constants/constants'
 import Spinner from '../../../components/Layout/Spinner';
+import Image from 'next/image'
 
 const Query = () => {
 
@@ -51,7 +52,7 @@ const Query = () => {
                 </div> :
                 <div id='allPosts' className="posts flex flex-col lg:flex-row pb-8 pt-16 px-4 text-white lg:px-20 bg-[#0F6292]">
                     <div className="cards md:flex md:flex-wrap lg:my-7 w-full md:mx-auto ">
-                        {blogs.map((blog) => {
+                        {blogs.length > 0 ? blogs.map((blog) => {
                             return (
                                 <Posts
                                     key={blog._id}
@@ -66,7 +67,14 @@ const Query = () => {
                                     date={blog.createdAt}
                                 />
                             )
-                        })}
+                        }) :
+                            <div className="notFound w-full font-Dancing-script text-4xl text-center lg:text-7xl flex flex-col items-center justify-center">
+                                <div className="image bg-white rounded-xl">
+                                    <Image src='/notFound.svg' width={500} height={500} alt='Result not found' />
+                                </div>
+                                <p className='mt-10 mb-2'>Nothing Found !</p>
+                                <p>Try Searching something else...</p>
+                            </div>}
                     </div>
                 </div>}
         </>
