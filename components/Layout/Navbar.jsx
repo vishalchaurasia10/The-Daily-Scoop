@@ -68,7 +68,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className='p-3 px-4 lg:px-8 text-white flex items-center transition-all backdrop-blur-3xl bg-[rgba(255,255,255,0.1)] duration-500 fixed top-0 shadow-2xl w-full z-50'>
+      <nav className='p-3 px-4 lg:px-8 text-white flex items-center transition-all backdrop-blur-3xl lg:backdrop-blur-md bg-[rgba(255,255,255,0.1)] duration-500 fixed top-0 shadow-2xl w-full z-50'>
         <div className={`topleft ${expandSearch ? '-translate-x-[15rem] absolute' : 'w-3/4'} lg:static lg:translate-x-0  transition-all duration-300 lg:w-1/3`}>
           <h1 className={`logo transition-all duration-300 font-bold font-jost text-2xl`}><Link href="/">The Daily Scoop</Link></h1>
         </div>
