@@ -1,4 +1,4 @@
-import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faDiscord, faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -28,7 +28,7 @@ const Footer = () => {
                 <Link target={'_blank'} href=''>
                   <li className='ml-8 hover:underline w-fit'>Portfolio Site</li>
                 </Link>
-                <Link target={'_blank'} href='https://github.com/vishalchaurasia10/BlogSite'>
+                <Link target={'_blank'} href='https://the-daily-scoop.vercel.app/'>
                   <li className='ml-8 hover:underline w-fit'>Blogging Site</li>
                 </Link>
                 <Link target={'_blank'} href='https://the-insight-news.vercel.app/'>
@@ -47,6 +47,9 @@ const Footer = () => {
                 </Link>
                 <Link target={'_blank'} href='https://www.linkedin.com/in/vishal-chaurasia-9a421022a/'>
                   <FontAwesomeIcon className='text-2xl hover:text-black transition-all duration-300' icon={faLinkedin} />
+                </Link>
+                <Link target={'_blank'} href='https://discordapp.com/users/914177389515386890'>
+                  <FontAwesomeIcon className='text-2xl hover:text-black transition-all duration-300' icon={faDiscord} />
                 </Link>
               </div>
 
