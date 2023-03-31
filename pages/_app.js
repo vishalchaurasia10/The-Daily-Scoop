@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }) {
       />
       <Navbar />
       <Component {...pageProps} />
-      <div className={`wrapper ${router.pathname === '/' ? '-mt-20 lg:mt-[-18rem]' : ''}  z-30 relative`}>
+      <div className={`wrapper ${router.pathname === '/' ? '-mt-20 lg:mt-[-18rem]' : ''}  z-20 relative`}>
         <Footer />
       </div>
       <GoTop />

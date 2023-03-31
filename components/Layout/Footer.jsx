@@ -9,7 +9,7 @@ const Footer = () => {
   const [darkMode, setDarkMode] = useState(false)
   return (
     <>
-      <div className={`${darkMode ? 'bg-[#212E35]' : ''}transition-all duration-300 footer`}>
+      <div className={`${darkMode ? 'bg-[#212E35]' : ''} transition-all duration-300 footer`}>
         <div className="image pt-4 lg:mt-0">
           <Image width={500} height={500} className='w-full' src='/footer2.svg' alt="footer" />
         </div>
@@ -28,7 +28,7 @@ const Footer = () => {
                 <Link target={'_blank'} href=''>
                   <li className='ml-8 hover:underline w-fit'>Portfolio Site</li>
                 </Link>
-                <Link target={'_blank'} href='https://the-daily-scoop.vercel.app/'>
+                <Link target={'_blank'} href='https://github.com/vishalchaurasia10/BlogSite'>
                   <li className='ml-8 hover:underline w-fit'>Blogging Site</li>
                 </Link>
                 <Link target={'_blank'} href='https://the-insight-news.vercel.app/'>
