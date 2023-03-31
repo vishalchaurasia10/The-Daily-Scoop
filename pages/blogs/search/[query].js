@@ -6,6 +6,7 @@ import constants from '../../../constants/constants'
 import Spinner from '../../../components/Layout/Spinner';
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Head from 'next/head'
 
 const Query = () => {
 
@@ -46,6 +47,9 @@ const Query = () => {
 
     return (
         <>
+        <Head>
+            <title>Search Results | The Daily Scoop</title>
+        </Head>
             <Banner />
             {isLoading ?
                 <div className="spinner py-40 w-full flex items-center justify-center">

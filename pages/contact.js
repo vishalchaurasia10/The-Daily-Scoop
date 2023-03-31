@@ -1,11 +1,17 @@
+import Head from 'next/head'
 import React from 'react'
 import Contact from '../components/Layout/Contact'
 
 const contact = () => {
   return (
-    <div>
-      <Contact/>
-    </div>
+    <>
+    <Head>
+      <title>Contact | The Daily Scoop</title>
+    </Head>
+      <div>
+        <Contact />
+      </div>
+    </>
   )
 }
 

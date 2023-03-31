@@ -6,6 +6,7 @@ import constants from '../../constants/constants'
 import Spinner from '../../components/Layout/Spinner';
 import InfiniteScroll from "react-infinite-scroll-component";
 import { motion } from 'framer-motion'
+import Head from 'next/head'
 
 const BlogHome = () => {
 
@@ -49,6 +50,9 @@ const BlogHome = () => {
 
   return (
     <>
+    <Head>
+      <title>All Blogs | The Daily Scoop</title>
+    </Head>
       <Banner />
       {isLoading ?
         <div className="spinner py-40 w-full flex items-center justify-center">

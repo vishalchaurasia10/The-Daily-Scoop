@@ -4,6 +4,8 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import constants from '../../constants/constants'
 import Spinner from '../../components/Layout/Spinner';
+import { motion } from 'framer-motion'
+import Head from 'next/head'
 
 const SingleBlog = () => {
   const router = useRouter()
@@ -49,11 +51,18 @@ const SingleBlog = () => {
 
   return (
     <>
+    <Head>
+      <title>{blog[0]?.title} | The Daily Scoop</title>
+    </Head>
       {isLoading ?
         <div className="spinner py-40 w-full flex items-center justify-center">
           <Spinner />
         </div> :
-        <div className="blogWrapper text-white py-24 lg:py-32 px-3 space-y-5 lg:px-40">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="blogWrapper text-white py-24 lg:py-32 px-6 space-y-5 lg:px-40">
           <h1 className='text-center text-4xl lg:text-6xl font-tilt-wrap tracking-wide font-bold'>{blog[0]?.title}</h1>
           <div className='author flex flex-col lg:flex-row items-center justify-center  font-jost'>
             <h2> <span className='font-bold text-xl'>Written by : </span><span className='text-lg'>{blog[0]?.author}</span> | </h2>
@@ -69,7 +78,7 @@ const SingleBlog = () => {
           </div>
           <div className='content ' dangerouslySetInnerHTML={createMarkup()} >
           </div>
-        </div>}
+        </motion.div>}
     </>
   )
 }
