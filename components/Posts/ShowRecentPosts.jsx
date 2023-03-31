@@ -3,6 +3,7 @@ import RecentPosts from './PostsCard'
 import constants from '../../constants/constants'
 import Link from 'next/link'
 import Spinner from '../Layout/Spinner';
+import { motion } from 'framer-motion'
 
 const ShowRecentPosts = () => {
 
@@ -35,32 +36,37 @@ const ShowRecentPosts = () => {
                 {isLoading && <div className="spinner py-40 w-full flex items-center justify-center">
                     <Spinner />
                 </div>}
-                {!isLoading && <div className="cards md:flex md:flex-wrap lg:my-7 w-full md:mx-auto ">
-                    {blogs.map((blog) => {
-                        return (
-                            <RecentPosts
-                                key={blog._id}
-                                title={blog.title}
-                                category={blog.category}
-                                tags={blog.tags}
-                                author={blog.author}
-                                content={blog.content}
-                                preview={blog.preview}
-                                slug={blog.slug}
-                                width='lg:w-[32%]'
-                                date={blog.createdAt}
-                            />
-                        )
-                    })}
-                    <div className={`wrapper py-10  ${blogs.length === 3 ? 'lg:w-full lg:py-10 ' : 'lg:w-[32%] lg:py-0'}  flex justify-center items-center`}>
-                        <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md px-8 py-3 font-medium tracking-wide text-white text-xl shadow-2xl border border-slate-100/20 hover:scale-110 transition duration-300 ease-out  active:translate-y-1">
-                            <span className="absolute inset-0 bg-gradient-to-r bg-[#42709a] opacity-0  transition duration-300 ease-out  group-hover:opacity-100  group-active:opacity-90"></span>
-                            <Link href='/blogs'>
-                                <span className="relative font-jost">Read More</span>
-                            </Link>
-                        </button>
-                    </div>
-                </div>}
+                {!isLoading &&
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1.5 }}
+                        className="cards md:flex md:flex-wrap lg:my-7 w-full md:mx-auto ">
+                        {blogs.map((blog) => {
+                            return (
+                                <RecentPosts
+                                    key={blog._id}
+                                    title={blog.title}
+                                    category={blog.category}
+                                    tags={blog.tags}
+                                    author={blog.author}
+                                    content={blog.content}
+                                    preview={blog.preview}
+                                    slug={blog.slug}
+                                    width='lg:w-[32%]'
+                                    date={blog.createdAt}
+                                />
+                            )
+                        })}
+                        <div className={`wrapper py-10  ${blogs.length === 3 ? 'lg:w-full lg:py-10 ' : 'lg:w-[32%] lg:py-0'}  flex justify-center items-center`}>
+                            <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md px-8 py-3 font-medium tracking-wide text-white text-xl shadow-2xl border border-slate-100/20 hover:scale-110 transition duration-300 ease-out  active:translate-y-1">
+                                <span className="absolute inset-0 bg-gradient-to-r bg-[#42709a] opacity-0  transition duration-300 ease-out  group-hover:opacity-100  group-active:opacity-90"></span>
+                                <Link href='/blogs'>
+                                    <span className="relative font-jost">Read More</span>
+                                </Link>
+                            </button>
+                        </div>
+                    </motion.div>}
             </div>
         </>
     )

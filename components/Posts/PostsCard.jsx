@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faCircle, faTags } from '@fortawesome/free-solid-svg-icons'
+import { motion } from 'framer-motion'
 
 const Posts = (props) => {
 
@@ -30,10 +31,14 @@ const Posts = (props) => {
         };
         return date.toLocaleString('en-US', options);
     }
-    
+
     return (
         <>
-            <div className={`card ${props.width} shadow-xl bg-[rgba(255,255,255,0.1)]  shadow-[#142c41] border border-[rgba(255,255,255,0.1)] rounded-lg md:mx-2 my-4 md:my-3 md:space-y-2`}>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7 }}
+                className={`card ${props.width} shadow-xl bg-[rgba(255,255,255,0.1)]  shadow-[#142c41] border border-[rgba(255,255,255,0.1)] rounded-lg md:mx-2 my-4 md:my-3 md:space-y-2`}>
                 <div className="img overflow-hidden">
                     <Image className='rounded-t-lg w-full transition-all duration-500 hover:scale-105' width={500} height={500} src="/hero2.jpg" alt="post_image" />
                 </div>
@@ -55,7 +60,7 @@ const Posts = (props) => {
                         </button>
                     </Link>
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }

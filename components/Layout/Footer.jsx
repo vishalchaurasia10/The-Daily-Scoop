@@ -25,10 +25,10 @@ const Footer = () => {
             <div className="projects space-y-6 lg:pl-12 lg:w-1/2">
               <h3 className='text-5xl font-Dancing-script'>Some of my Projects</h3>
               <ul className='list-disc space-y-1'>
-                <Link target={'_blank'} href=''>
+                <Link href='/progress'>
                   <li className='ml-8 hover:underline w-fit'>Portfolio Site</li>
                 </Link>
-                <Link target={'_blank'} href='https://github.com/vishalchaurasia10/BlogSite'>
+                <Link target={'_blank'} href='https://the-daily-scoop.vercel.app/'>
                   <li className='ml-8 hover:underline w-fit'>Blogging Site</li>
                 </Link>
                 <Link target={'_blank'} href='https://the-insight-news.vercel.app/'>

@@ -5,6 +5,7 @@ import Posts from '../../../components/Posts/PostsCard'
 import constants from '../../../constants/constants'
 import Spinner from '../../../components/Layout/Spinner';
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const Query = () => {
 
@@ -68,13 +69,17 @@ const Query = () => {
                                 />
                             )
                         }) :
-                            <div className="notFound w-full font-Dancing-script text-4xl text-center lg:text-7xl flex flex-col items-center justify-center">
+                            <motion.div
+                                initial={{ translateY: '-10rem' }}
+                                animate={{ translateY: '0rem' }}
+                                transition={{ duration: 0.3 }}
+                                className="notFound w-full font-Dancing-script text-4xl text-center lg:text-7xl flex flex-col items-center justify-center">
                                 <div className="image shadow-2xl shadow-black bg-white rounded-xl">
                                     <Image src='/notFound.svg' width={500} height={500} alt='Result not found' />
                                 </div>
                                 <p className='mt-10 mb-2'>Nothing Found !</p>
                                 <p>Try Searching something else...</p>
-                            </div>}
+                            </motion.div>}
                     </div>
                 </div>}
         </>

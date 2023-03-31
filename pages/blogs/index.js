@@ -5,6 +5,7 @@ import Posts from '../../components/Posts/PostsCard'
 import constants from '../../constants/constants'
 import Spinner from '../../components/Layout/Spinner';
 import InfiniteScroll from "react-infinite-scroll-component";
+import { motion } from 'framer-motion'
 
 const BlogHome = () => {
 
@@ -34,7 +35,7 @@ const BlogHome = () => {
   const fetchMoreData = async () => {
     setTimeout(async () => {
       setNumberOfBlogs(numberOfBlogs + 2);
-      const response = await fetch(`${constants.API_URL}/api/blogs/getBlogs?count=${numberOfBlogs+2}`, {
+      const response = await fetch(`${constants.API_URL}/api/blogs/getBlogs?count=${numberOfBlogs + 2}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -56,7 +57,7 @@ const BlogHome = () => {
         <InfiniteScroll
           dataLength={blogs.length} //This is important field to render the next data
           next={fetchMoreData}
-          hasMore={totalBlogs>numberOfBlogs}
+          hasMore={totalBlogs > numberOfBlogs}
           loader={<div className="spinner py-40 w-full flex items-center justify-center"><Spinner /></div>}
           endMessage={
             <p className='flex justify-center items-center my-8 text-center text-white text-4xl lg:text-6xl font-Dancing-script'>Thats it. Return on next Saturday to see new blogs.</p>
@@ -81,9 +82,13 @@ const BlogHome = () => {
                 )
               })}
             </div>
-            <div className="sidebar lg:pt-12 pb-8 lg:pb-0 order-1 lg:order-2 lg:w-1/4">
+            <motion.div
+              initial={{ opacity: 0}}
+              animate={{ opacity: 1}}
+              transition={{ duration: 0.7 }}
+             className="sidebar lg:pt-12 pb-8 lg:pb-0 order-1 lg:order-2 lg:w-1/4">
               <Sidebar blogs={blogs} />
-            </div>
+            </motion.div>
           </div>
         </InfiniteScroll>}
     </>
