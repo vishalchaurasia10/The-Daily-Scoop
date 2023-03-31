@@ -29,7 +29,7 @@ const Contact = () => {
                         <input required className={`outline-none transition-all duration-300 border-slate-400 drop-shadow-sm border-2 rounded-xl p-4`} type="email" placeholder='Enter Email Address' name="email" id="email" />
                         <textarea required className={` transition-all duration-300 outline-none border-slate-400 drop-shadow-sm border-2 rounded-xl p-4`} name="message" id="" placeholder='Tell Us Something About Your Project' cols="30" rows="4"></textarea>
                         <input type='submit' value='Contact Me' className={`bg-orange-400 p-3 w-fit cursor-pointer rounded-sm transition-all duration-300 hover:-translate-y-1`} />
-                        <input type="hidden" name="_next" value="https://cloud-scribe-vishalchaurasia10.vercel.app/" />
+                        <input type="hidden" name="_next" value="https://the-daily-scoop.vercel.app/" />
                         <input type="hidden" name="_captcha" value="false"></input>
                     </form>
                 </div>
