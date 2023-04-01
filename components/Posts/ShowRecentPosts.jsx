@@ -11,7 +11,7 @@ const ShowRecentPosts = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     const getRecentBlogs = async () => {
-        const response = await fetch(`${constants.API_URL}/api/blogs/getBlogs?count=5`, {
+        const response = await fetch(`${constants.API_URL}/api/blogs/getBlogs?count=100`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
